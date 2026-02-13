@@ -6,11 +6,11 @@
 void disp_ethernet(struct my_ethhdr *eth) {
     printf("\n[Ethernet Header] --------------------\n");
     
-    printf("  Dest MAC: %02x:%02x:%02x:%02x:%02x:%02x\n", eth->h_dest[0], eth->h_dest[1], eth->h_dest[2], eth->h_dest[3], eth->h_dest[4], eth->h_dest[5]);
-    printf("  Src  MAC: %02x:%02x:%02x:%02x:%02x:%02x\n", eth->h_source[0], eth->h_source[1], eth->h_source[2], eth->h_source[3], eth->h_source[4], eth->h_source[5]);
+    printf("  Dest MAC  : %02x:%02x:%02x:%02x:%02x:%02x\n", eth->h_dest[0], eth->h_dest[1], eth->h_dest[2], eth->h_dest[3], eth->h_dest[4], eth->h_dest[5]);
+    printf("  Src  MAC  : %02x:%02x:%02x:%02x:%02x:%02x\n", eth->h_source[0], eth->h_source[1], eth->h_source[2], eth->h_source[3], eth->h_source[4], eth->h_source[5]);
     
     uint16_t type = ntohs(eth->h_proto);
-    printf("  EtherType: 0x%04x ", type);
+    printf("  EtherType : 0x%04x ", type);
     if (type == MY_ETH_P_IP) printf("(IPv4)\n");
     else if (type == MY_ETH_P_ARP) printf("(ARP)\n");
     else if (type == MY_ETH_P_IPV6) printf("(IPv6)\n");
