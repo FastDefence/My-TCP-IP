@@ -19,7 +19,7 @@ int main() {
             break;
         }
 
-        handle_ethernet(buffer, nread);
+        handle_ethernet(fd, buffer, nread);
     }
 
     close(fd);

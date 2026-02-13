@@ -2,8 +2,9 @@ CC      = gcc
 CFLAGS  = -Wall -Wextra -I. -Iheaders
 
 SRCS    = main.c make_tap.c \
-          dispatcher/layer3.c \
-          handler/arp.c handler/ethernet.c handler/ipv4.c
+          util/checksum.c \
+          dispatcher/layer3.c dispatcher/layer4.c \
+          handler/arp.c handler/ethernet.c handler/ipv4.c handler/icmp.c
 
 OBJS    = $(SRCS:.c=.o)
 

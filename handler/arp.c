@@ -31,7 +31,7 @@ void disp_arp(struct my_arphdr *arp){
     printf("--------------------------------------\n");
 }
 
-void handle_arp(const uint8_t *data, size_t len) {
+void handle_arp(int fd, const uint8_t *data, size_t len) {
     if (len < sizeof(struct my_arphdr)) {
         return;
     }

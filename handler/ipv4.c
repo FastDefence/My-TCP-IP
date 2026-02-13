@@ -39,15 +39,15 @@ void disp_ipv4(struct my_ipv4hdr *ip) {
     printf("--------------------------------------\n");
 }
 
-void handle_ipv4(const uint8_t *data, size_t len) {
+void handle_ipv4(int fd, const uint8_t *data, size_t len) {
     if (len < sizeof(struct my_ipv4hdr)) return;
 
     struct my_ipv4hdr *ip = (struct my_ipv4hdr *)data;
     disp_ipv4(ip);
 
-    //int hlen = ip->ihl * 4;
-    //const uint8_t *payload = data + hlen;
-    //size_t payload_len = len - hlen;
+    int hlen = ip->ihl * 4;
+    const uint8_t *payload = data + hlen;
+    size_t payload_len = len - hlen;
 
-    // TODO: l4_dispatch(ip->protocol, payload, payload_len);
+    l4_dispatch(fd, ip->protocol, payload, payload_len);
 }

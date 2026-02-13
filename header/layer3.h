@@ -26,3 +26,5 @@ struct my_ipv4hdr {
     uint32_t saddr;        // 送信元IP
     uint32_t daddr;        // 宛先IP
 } __attribute__((packed));
+
+#define MY_L3_P_ICMP 0x0001 // ICMP

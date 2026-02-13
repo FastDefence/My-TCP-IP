@@ -19,7 +19,7 @@ void disp_ethernet(struct my_ethhdr *eth) {
     printf("--------------------------------------\n");
 }
 
-void handle_ethernet(const uint8_t *data, size_t len) {
+void handle_ethernet(int fd, const uint8_t *data, size_t len) {
     if (len < sizeof(struct my_ethhdr)) {
         return; 
     }
@@ -32,5 +32,5 @@ void handle_ethernet(const uint8_t *data, size_t len) {
     const uint8_t *payload = data + sizeof(struct my_ethhdr);
     size_t payload_len = len - sizeof(struct my_ethhdr);
 
-    l3_dispatch(type, payload, payload_len);
+    l3_dispatch(fd, type, payload, payload_len);
 }
