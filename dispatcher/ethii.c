@@ -1,4 +1,5 @@
 #include "../header/parser.h"
+#include "../header/protocols.h"
 #include "../pcthdr/ethii.h"
 
 void dispatch_ethii(const uint8_t *data, size_t len)
