@@ -6,7 +6,7 @@
 #include "./parser.h"
 
 // ディスパッチャ
-void ethii_dispatch(const uint8_t *data, size_t len);
+void dispatch_ethii(const uint8_t *data, size_t len);
 
 // パーサー
 ParseResult parse_ethii(const uint8_t *data, size_t len);

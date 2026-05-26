@@ -19,7 +19,7 @@ int main() {
             break;
         }
 
-        ethii_dispatch(buffer, (size_t)nread);
+        dispatch_ethii(buffer, (size_t)nread);
     }
 
     close(fd);

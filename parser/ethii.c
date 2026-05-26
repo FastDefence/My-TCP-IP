@@ -21,7 +21,7 @@ void disp_ethernet(const struct my_ethhdr *eth) {
     printf("--------------------------------------\n");
 }
 
-ParseResult parse_ethernet(const uint8_t *data, size_t len) {
+ParseResult parse_ethii(const uint8_t *data, size_t len) {
     ParseResult result = {
         .next_proto = PROTO_NONE,
         .payload = NULL,
@@ -41,7 +41,7 @@ ParseResult parse_ethernet(const uint8_t *data, size_t len) {
     result.payload = data + sizeof(struct my_ethhdr);
     result.payload_len = len - sizeof(struct my_ethhdr);
 
-    switch (type) {
+    switch (ether_type) {
         case MY_ETH_P_IP:
             result.next_proto = PROTO_IPV4;
             break;
