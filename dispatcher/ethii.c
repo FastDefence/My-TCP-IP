@@ -1,7 +1,7 @@
 #include "../header/parser.h"
-#include "../header/ethii.h"
+#include "../pcthdr/ethii.h"
 
-void dispatch_ethernet_frame(const uint8_t *data, size_t len)
+void ethii_dispatch(const uint8_t *data, size_t len)
 {
     ParseResult result = parse_ethernet(data, len);
 

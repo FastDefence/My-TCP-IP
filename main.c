@@ -19,7 +19,7 @@ int main() {
             break;
         }
 
-        dispatch_ethernet_frame(buffer, (size_t)nread);
+        ethii_dispatch(buffer, (size_t)nread);
     }
 
     close(fd);

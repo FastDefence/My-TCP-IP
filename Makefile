@@ -3,8 +3,8 @@ CFLAGS  = -Wall -Wextra -I. -Iheaders
 
 SRCS    = main.c make_tap.c \
           util/checksum.c \
-          dispatcher/layer3.c dispatcher/layer4.c \
-          handler/arp.c handler/ethii.c handler/ipv4.c handler/icmp.c
+          dispatcher/ethii.c \
+          parser/ethii.c
 
 OBJS    = $(SRCS:.c=.o)
 

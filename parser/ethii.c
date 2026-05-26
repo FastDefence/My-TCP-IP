@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <arpa/inet.h>
-#include "../header/ethii.h"
+#include "../pcthdr/ethii.h"
 #include "../header/parser.h"
-#include "../protocols.h"
+#include "../header/protocols.h"
 
 void disp_ethernet(const struct my_ethhdr *eth) {
     printf("\n[Ethernet Header] --------------------\n");
